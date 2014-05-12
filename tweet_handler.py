@@ -85,7 +85,7 @@ class TweetHandler(object):
                 for gst_i,gst in enumerate(group_standards):
                     distance = editdistance.eval(post, gst)
                     # if we find one that's similar, let's bucket there
-                    if distance < dist_threshold:
+                    if distance < DIST_THRESHOLD:
                         matching_gst_i = gst_i
                         break
 
@@ -117,9 +117,11 @@ if __name__ ==  "__main__":
     """
         2) Ranking these groups of Twitter posts by popularity.
     """
+    print
+    print "#) Count -- Tweet (standard of group)"
+    print
     for i,p in enumerate(popular_posts,start=1):
         if i > DISPLAY_RANKINGS:
             break
-        print "%i) %s" % (i,p[0]['text']) # read the first tweet
+        print "%i) %i -- %s" % (i,len(p),p[0]['text']) # read the first tweet
         print
-
