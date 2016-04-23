@@ -1,3 +1,4 @@
+# tweet clustering
 Our tweet-handler is responsible for reading over a collection of tweets in a file
   format (e.g. json) and grouping them by similar content, also allowing
   sub-filtering based on retweets.
